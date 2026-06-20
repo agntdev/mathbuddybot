@@ -1,0 +1,35 @@
+[
+  {
+    "name": "/mul with two numbers returns the product",
+    "steps": [
+      {
+        "send": { "text": "/mul 5 3" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Result: 15" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/mul with no arguments shows usage hint",
+    "steps": [
+      {
+        "send": { "text": "/mul" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /mul <number> <number>\nExample: /mul 5 3" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/mul with non-numeric arguments shows usage hint",
+    "steps": [
+      {
+        "send": { "text": "/mul abc def" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /mul <number> <number>\nExample: /mul 5 3" } }
+        ]
+      }
+    ]
+  }
+]
