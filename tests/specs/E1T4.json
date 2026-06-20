@@ -1,0 +1,57 @@
+[
+  {
+    "name": "/div with two valid numbers computes the quotient",
+    "steps": [
+      {
+        "send": { "text": "/div 10 5" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "10 / 5 = 2" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/div with floating point result",
+    "steps": [
+      {
+        "send": { "text": "/div 5 2" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "5 / 2 = 2.5" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/div by zero shows friendly error",
+    "steps": [
+      {
+        "send": { "text": "/div 10 0" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Cannot divide by zero." } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/div with non-numeric input shows usage hint",
+    "steps": [
+      {
+        "send": { "text": "/div abc 5" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /div <number> <number>" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/div with missing operand shows usage hint",
+    "steps": [
+      {
+        "send": { "text": "/div 5" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /div <number> <number>" } }
+        ]
+      }
+    ]
+  }
+]
