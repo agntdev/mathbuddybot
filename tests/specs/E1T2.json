@@ -1,0 +1,35 @@
+[
+  {
+    "name": "/sub with two valid numbers computes the difference",
+    "steps": [
+      {
+        "send": { "text": "/sub 10 5" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "10 - 5 = 5" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/sub with non-numeric input shows usage hint",
+    "steps": [
+      {
+        "send": { "text": "/sub abc 5" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /sub <number> <number>" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/sub with missing operand shows usage hint",
+    "steps": [
+      {
+        "send": { "text": "/sub 5" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /sub <number> <number>" } }
+        ]
+      }
+    ]
+  }
+]
