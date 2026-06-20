@@ -1,6 +1,6 @@
 import { Composer } from "grammy";
 import type { Ctx } from "../bot.js";
-import { formatNumber } from "../toolkit/index.js";
+import { formatNumber } from "../util/formatNumber.js";
 
 const composer = new Composer<Ctx>();
 
